@@ -1,3 +1,28 @@
-<p>
-  home works!
-</p>
+<h1 [ngStyle]="{
+  'color': h1Style ? 'gray' : 'black',
+  'font-size': h1Style ? '1em' : '4em'
+}">Home</h1>
+
+<button (click)='firstClick()'>Click me</button>
+
+
+<button (click)='secondClick()'>Click me too</button>
+
+<br>
+<br>
+
+<p>First name:</p>
+<input [(ngModel)]='firstName' />
+
+<p>Last name:</p>
+<input [(ngModel)]='lastName' />
+
+<h2>Hello {{firstName}} {{lastName}}</h2>
+
+
+<ul *ngIf="users">
+  <li *ngFor="let user of users.data">
+    <img [src]="user.avatar">
+    <p>{{user.first_name}} {{user.last_name}}</p>
+  </li>
+</ul>
